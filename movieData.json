@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "title": "공조2: 인터내셔날",
+            "year": 1988,
+            "posterImageURL": "https://movie-phinf.pstatic.net/20220826_188/1661489945659Su2RI_JPEG/movie_image.jpg"
+        },
+        {
+            "id": 2,
+            "title": "육사오",
+            "year": 2014,
+            "posterImageURL": "https://movie-phinf.pstatic.net/20220824_252/1661324514413czYBf_JPEG/movie_image.jpg"
+        },
+        {
+            "id": 3,
+            "title": "헌트",
+            "year": 1999,
+            "posterImageURL": "https://movie-phinf.pstatic.net/20220805_227/1659685387586PIORG_JPEG/movie_image.jpg"
+        },
+        {
+            "id": 4,
+            "title": "한신: 용의 출현",
+            "year": 2012,
+            "posterImageURL": "https://movie-phinf.pstatic.net/20220727_209/1658912961873lVd2W_JPEG/movie_image.jpg"
+        },
+        {
+            "id": 5,
+            "title": "알라딘",
+            "year": 2018,
+            "posterImageURL": "https://movie-phinf.pstatic.net/20190524_104/1558663170174Q2mmw_JPEG/movie_image.jpg"
+        }
+    ]
+}

@@ -18,11 +18,11 @@ function HomeCarousel() {
       <View style={styles.movieUl}>
         <Image style={styles.movieLi} source={{uri: item.posterImageURL}} />
       </View>
-      <View style={styles.movieInfo}>
+      {/* <View style={styles.movieInfo}>
         <Text style={styles.movieTitle}>{item.title}</Text>
         <Text style={styles.movieYear}>({item.year})</Text>
         <Text style={styles.movieTitle}>{item.id}</Text>
-      </View>
+      </View> */}
     </View>
   );
 

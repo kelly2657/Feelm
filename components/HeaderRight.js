@@ -3,7 +3,7 @@ import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
-function HeaderRight() {
+function HeaderRight({propsColor}) {
   const navigation = useNavigation();
 
   return (
@@ -11,12 +11,26 @@ function HeaderRight() {
       <TouchableOpacity
         style={styles.touchableOpacity}
         onPress={() => navigation.navigate('Search')}>
-        <Icon name="search" style={styles.icon} />
+        <Icon
+          name="search" //
+          style={{...styles.icon, color: propsColor}}
+        />
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.touchableOpacity}
-        onPress={() => navigation.navigate('My')}>
-        <Icon name="folder" style={styles.icon} />
+        onPress={() => navigation.navigate('Alert')}>
+        <Icon
+          name="notifications"
+          style={{...styles.icon, color: propsColor}}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.touchableOpacity}
+        onPress={() => navigation.navigate('Setting')}>
+        <Icon
+          name="settings" //
+          style={{...styles.icon, color: propsColor}}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -26,7 +40,7 @@ const styles = StyleSheet.create({
   view: {
     width: '100%',
     paddingHorizontal: 16,
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -37,7 +51,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   icon: {
-    color: '#4287f5',
+    // color: '#4287f5',
     fontSize: 24,
   },
 });

@@ -6,17 +6,18 @@ import SettingOption from '../components/SettingOption';
 const optionData = [
   {
     toggleText: '동영상 자동 재생',
-    // toggleSubTitle: '5G/LTE 등의 환경에서는 데이터 요금이 발생할 수 있습니다.',
+    toggleDescription:
+      '5G/LTE 등의 환경에서는 데이터 요금이 발생할 수 있습니다.',
     toggleFunc: () => console.log('변경1'),
   },
   {
     toggleText: '청소년 보호',
-    // toggleSubTitle: '청소년 보호합니다 앙기모띠',
+    toggleDescription: '유해 콘텐츠를 차단합니다.',
     toggleFunc: () => console.log('변경2'),
   },
   {
     toggleText: '다크 모드',
-    // toggleSubTitle: '편안한 환경에서 시청',
+    toggleDescription: '편안한 환경에서 시청합니다.',
     toggleFunc: () => console.log('변경3'),
   },
 ];
@@ -47,10 +48,13 @@ function SettingScreen({navigation}) {
         renderItem={({item}) => (
           <SettingOption
             toggleText={item.toggleText}
-            onValueChange={item.onValueChange}
+            toggleDescription={item.toggleDescription}
+            toggleFunc={item.toggleFunc}
+            // onValueChange={item.onValueChange}
           />
         )}
       />
+      <View style={styles.separator} />
     </View>
   );
 }
@@ -71,15 +75,13 @@ const styles = StyleSheet.create({
     flexGrow: 0,
   },
   screen: {
-    paddingHorizontal: '2.5%',
-    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     backgroundColor: 'white',
   },
   separator: {
     height: 1,
-    backgroundColor: '#151515',
+    backgroundColor: '#ccc',
   },
 });
 

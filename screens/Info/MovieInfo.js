@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 
-const SeriesData = require('../../json/Series.json').items;
+const MovieData = require('../../json/Movie.json').items;
 
 function MovieInfo({route}) {
-  const series = SeriesData.filter(item => item.id === route.params.propsId)[0];
+  const series = MovieData.filter(item => item.id === route.params.propsId)[0];
   return (
     <View>
       <Text>{series.name}</Text>

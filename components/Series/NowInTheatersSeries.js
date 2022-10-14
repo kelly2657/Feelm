@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
 /* components */
-import HorizontalMovieList from './HorizontalMovieList';
+import HorizontalMovieList from '../List/HorizontalMovieList';
 
 /* json */
 const SeriesData = require('../../json/Series.json').items;

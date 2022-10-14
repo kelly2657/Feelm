@@ -2,7 +2,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 /* Tab */
-import MainTab from './Tab/MainTab';
+import MainTab from './MainTab';
 
 /* Info */
 import ActorInfo from './Info/ActorInfo';
@@ -10,16 +10,15 @@ import DirectorInfo from './Info/DirectorInfo';
 import MovieInfo from './Info/MovieInfo';
 import SeriesInfo from './Info/SeriesInfo';
 
-/* Screen */
-import AlertScreen from './AlertScreen';
-import LoadingScreen from './LoadingScreen';
-import SearchScreen from './SearchScreen';
-import SettingScreen from './SettingScreen';
+/* Stack */
+import AlertScreen from './Stack/AlertScreen';
+import LoadingScreen from './Stack/LoadingScreen';
+import SearchScreen from './Stack/SearchScreen';
+import SettingScreen from './Stack/SettingScreen';
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-  /* 헤더 옵션*/
   const headerOptions = {
     headerTitleStyle: {
       color: '#4287f5',

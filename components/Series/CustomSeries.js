@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
 /* components */
-import HorizontalMovieList from './HorizontalMovieList';
+import HorizontalMovieList from '../List/HorizontalMovieList';
 
 /* json */
 const SeriesData = require('../../json/Series.json').items;
@@ -22,21 +22,19 @@ function CustomSeries({propsId}) {
       style={styles.container}
       onPress={() => navigation.navigate('SeriesInfo', {propsId: propsId})}>
       <View style={styles.left}>
-        <View style={styles.title}>
-          <Text style={[styles.text, styles.large]}>{series.name}</Text>
-        </View>
-        <View style={styles.row}>
-          <View style={[styles.row, styles.info]}>
+        <Text style={styles.seriesName}>{series.name}</Text>
+        <View style={styles.seriesInfo}>
+          <View style={styles.seriesLike}>
             <Icon name="favorite" color="red" size={16} />
             <Text style={styles.text}>{series.like}</Text>
           </View>
           <Text style={styles.text}>영화 {series.refer.length}개</Text>
         </View>
-        <Text style={[styles.text, styles.small]}>Feelm에서 제공</Text>
+        <Text style={styles.seriesCreator}>Feelm에서 제공</Text>
       </View>
 
       <View style={styles.right}>
-        <HorizontalMovieList propsRefer={series.refer} limit={2} />
+        <HorizontalMovieList propsRefer={series.refer} limit={4} />
       </View>
     </TouchableOpacity>
   );
@@ -45,14 +43,14 @@ function CustomSeries({propsId}) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    height: 240,
+    height: 180,
     marginHorizontal: 8,
-    marginTop: 16,
+    marginVertical: 8,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
+    borderRadius: 0,
     backgroundColor: '#fafafa',
-    elevation: 8,
+    elevation: 5,
   },
   left: {
     width: 160,
@@ -64,26 +62,26 @@ const styles = StyleSheet.create({
   right: {
     flex: 1,
   },
-  title: {
-    paddingBottom: 8,
+  text: {
+    color: 'black',
+    fontSize: 12,
   },
-  row: {
-    flexDirection: 'row',
-  },
-  info: {
-    paddingRight: 8,
-    alignItems: 'center',
-  },
-  large: {
+  seriesName: {
+    color: 'black',
     fontSize: 28,
     fontWeight: 'bold',
   },
-  small: {
-    fontSize: 12,
-    color: '#777',
+  seriesInfo: {
+    flexDirection: 'row',
   },
-  text: {
-    color: 'black',
+  seriesLike: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingRight: 8,
+  },
+  seriesCreator: {
+    color: '#777',
+    fontSize: 12,
   },
 });
 

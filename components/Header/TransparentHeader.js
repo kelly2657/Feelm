@@ -3,7 +3,7 @@ import {StyleSheet, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function TransparentHeader({backgroundColor}) {
+function TransparentHeader({backgroundColor = '#4287f5'}) {
   const navigation = useNavigation();
   return (
     <View style={styles.header}>
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
   title: {
     color: 'black',
     fontSize: 20,
-    // fontWeight: 'bold',
   },
   wrapper: {
     width: 32,
@@ -52,4 +51,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
 export default TransparentHeader;

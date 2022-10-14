@@ -15,16 +15,15 @@ function Nav() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    // justifyContent: 'center',
     alignItems: 'center',
-    height: 40,
+    height: 32,
     flexDirection: 'row',
     paddingHorizontal: 8,
-    // borderBottomWidth: 1,
-    // elevation: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
   nav: {
-    fontSize: 32,
+    fontSize: 16,
     fontWeight: 'bold',
     marginRight: 8,
   },

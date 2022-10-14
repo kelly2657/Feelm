@@ -6,11 +6,13 @@ import CustomSeries from '../../components/Series/CustomSeries';
 import ActorSeries from '../../components/Series/ActorSeries';
 import DirectorSeries from '../../components/Series/DirectorSeries';
 import OTTSeries from '../../components/Series/OTTSeries';
+import TransparentHeader from '../../components/Header/TransparentHeader';
 
 function SeriesTab() {
   StatusBar.setBarStyle('dark-content');
   return (
     <>
+      {/* <TransparentHeader /> */}
       <Nav />
       <ScrollView style={styles.container}>
         <CustomSeries propsId={2} />
@@ -29,4 +31,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
+
 export default SeriesTab;

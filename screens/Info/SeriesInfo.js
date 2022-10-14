@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
-import HorizontalMovieList from '../../components/Series/HorizontalMovieList';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
+import HorizontalMovieList from '../../components/List/HorizontalMovieList';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import TransparentHeader from '../../components/Header/TransparentHeader';
@@ -33,7 +33,6 @@ function SeriesInfo({route}) {
             width: '70%',
             marginHorizontal: '15%',
             marginTop: -48,
-            // marginBottom: 8,
             backgroundColor: 'white',
             justifyContent: 'center',
             alignItems: 'center',
@@ -72,20 +71,21 @@ function SeriesInfo({route}) {
           style={{
             paddingTop: 16,
             paddingHorizontal: 8,
-            // elevation: 5,
             backgroundColor: 'white',
           }}>
           <View
             style={{
               paddingHorizontal: 8,
             }}>
-            <Text>{series.creater}에서 제공</Text>
+            <Text>{series.creator}에서 제공</Text>
             <Text>좋아요 {series.like}</Text>
             <Text>{series.refer.length}개 작품</Text>
             <Text>시리즈 설명(커스텀 시리즈의 경우)</Text>
             <View style={styles.horizontalSeparator} />
           </View>
 
+          <HorizontalMovieList propsRefer={series.refer} />
+          <HorizontalMovieList propsRefer={series.refer} />
           <HorizontalMovieList propsRefer={series.refer} />
         </View>
       </ScrollView>

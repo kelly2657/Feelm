@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
 /* components */
-import HorizontalMovieList from './HorizontalMovieList';
+import HorizontalMovieList from '../List/HorizontalMovieList';
 
 /* json */
 const SeriesData = require('../../json/Series.json').items;
@@ -28,12 +28,11 @@ function ActorSeries({propsId}) {
 
 const styles = StyleSheet.create({
   container: {
-    height: 240,
+    height: 180,
     marginHorizontal: 8,
-    marginTop: 16,
+    marginVertical: 8,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 8,
     backgroundColor: '#fafafa',
     elevation: 8,
   },

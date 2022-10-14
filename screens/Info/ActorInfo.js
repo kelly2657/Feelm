@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
-import HorizontalMovieList from '../../components/Series/HorizontalMovieList';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import TransparentHeader from '../../components/Header/TransparentHeader';
+import HorizontalMovieList from '../../components/List/HorizontalMovieList';
 
 const MovieData = require('../../json/Movie.json').items;
 const ActorData = require('../../json/Actor.json').items;

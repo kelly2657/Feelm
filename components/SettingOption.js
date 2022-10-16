@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     height: 64,
     paddingVertical: 0,
     paddingHorizontal: 16,
+    borderRadius: 8,
   },
   top: {
     height: 40,

@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   },
   seriesName: {
     color: 'black',
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
   },
   seriesInfo: {

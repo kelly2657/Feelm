@@ -2,14 +2,16 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function ScreenHeader({title}) {
-  return (
-    <View style={styles.container}>
-      <View style={styles.wrapper}>
-        <Text style={styles.title}>{title}</Text>
+function ScreenHeader({visibility = true, title}) {
+  if (visibility) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.wrapper}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
       </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({

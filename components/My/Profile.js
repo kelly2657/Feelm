@@ -3,7 +3,7 @@ import {StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import MenuLike from './MenuLike';
-import AlertAndSetting from './AlertAndSetting';
+import GoAlertAndSetting from '../Header/GoAlertAndSetting';
 
 function Profile({visibility, name}) {
   return (
@@ -24,7 +24,7 @@ function Profile({visibility, name}) {
         <Text style={styles.editText}>편집</Text>
       </View>
       <View style={styles.isTopWrapper}>
-        <AlertAndSetting color="white" />
+        <GoAlertAndSetting color="white" />
       </View>
     </View>
   );
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
     zIndex: 1,
     top: 8,
     right: 8,
-
     width: 64,
     height: 24,
     backgroundColor: '#ccc',

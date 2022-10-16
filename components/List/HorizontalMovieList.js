@@ -11,8 +11,9 @@ import {useNavigation} from '@react-navigation/native';
 const MovieData = require('../../json/Movie.json').items;
 
 /**
- * 영화 포스터로 구성된 FlatList를 반환한다.
+ * 영화 포스터로 구성된 수평 FlatList를 반환한다.
  * @param {number[]} propsRefer 영화 ID로 구성된 리스트
+ * @param {number} limit 포스터 제한
  * @param {number} width 포스터 너비
  * @param {number} height 포스터 높이
  * @param {number[]} margin 컴포넌트의 margin (Top, Right, Bottom / Left)
@@ -76,8 +77,6 @@ const uStyles = (width, height, margin, padding, borderRadius) =>
       width: '100%',
       height: '100%',
       borderRadius,
-      borderWidth: 1,
-      borderColor: '#ccc',
     },
   });
 

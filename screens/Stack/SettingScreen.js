@@ -2,6 +2,7 @@ import React, {useCallback} from 'react';
 import {StyleSheet, ScrollView, View, FlatList} from 'react-native';
 
 import ScreenHeader from '../../components/Header/ScreenHeader';
+import GoBack from '../../components/Header/GoBack';
 import SettingOption from '../../components/SettingOption';
 
 const optionData = [
@@ -35,6 +36,7 @@ function SettingScreen({navigation}) {
   return (
     <>
       <ScreenHeader title="설정" />
+      <GoBack />
       <View style={styles.container}>
         <FlatList
           style={styles.flatList}
@@ -65,16 +67,17 @@ function SettingScreen({navigation}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 64,
     alignItems: 'center',
+    marginTop: 72,
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#eee',
+    paddingHorizontal: 16,
   },
   title: {
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '100%',
     height: 400,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   settingTitleText: {
     fontSize: 16,
@@ -86,8 +89,8 @@ const styles = StyleSheet.create({
   },
 
   separator: {
-    height: 1,
-    backgroundColor: '#ccc',
+    height: 8,
+    backgroundColor: '#eee',
   },
 });
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import ScreenHeader from '../../components/Header/ScreenHeader';
+import GoBack from '../../components/Header/GoBack';
 
 function SearchScreen() {
   return (
     <>
       <ScreenHeader title="검색" />
+      <GoBack />
       <ScrollView style={styles.container}>
         <Text>ㅎㅇ</Text>
       </ScrollView>

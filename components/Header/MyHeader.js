@@ -3,15 +3,15 @@ import {StyleSheet, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import AlertAndSetting from '../My/AlertAndSetting';
+import GoAlertAndSetting from './GoAlertAndSetting';
 
-function MyHeader({visibility, name}) {
+function MyHeader({visibility, title}) {
   if (visibility) {
     return (
       <View style={styles.container}>
         <View style={styles.wrapper}>
-          <Text style={styles.title}>{name}</Text>
-          <AlertAndSetting color="#333" />
+          <Text style={styles.title}>{title}</Text>
+          <GoAlertAndSetting color="#333" />
         </View>
       </View>
     );

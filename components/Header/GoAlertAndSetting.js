@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function AlertAndSetting({color}) {
+function GoAlertAndSetting({color}) {
   const navigation = useNavigation();
   return (
     <>
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AlertAndSetting;
+export default GoAlertAndSetting;

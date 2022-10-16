@@ -14,27 +14,27 @@ const ActorData = require('../../json/Actor.json').items;
  * @할것 가독성 향상을 위해 StatusBar을 상황에 따라 light-content 또는 dark-content로 설정하는 기능을 추가해야 합니다.
  */
 function MovieInfo({route}) {
-  const movie = MovieData.filter(item =>item.id === route.params.propsId)[0];
-  const director = DirectorData.filter(item =>item.id === movie.director)[0];
-  const actor = ActorData.filter(item =>item.id === movie.actor[0])[0];
+  const movie = MovieData.filter(item => item.id === route.params.propsId)[0];
+  const director = DirectorData.filter(item => item.id === movie.director)[0];
+  const actor = ActorData.filter(item => item.id === movie.actor[0])[0];
   return (
     <>
       <TransparentHeader backgroundColor="orange" />
       <ScrollView style={styles.container}>
-      <View
-       style={{
-        height:240,
-        backgroundColor:'#4287f5',
-       }}>
-        <Image
-         style={{
-          width:'100%',
-          height:'100%',
-          // borderRadius: 80,
-          // elevation: 5,
-        }}
-        source={{uri:movie.posterImageURL}}
-        />
+        <View
+          style={{
+            height: 240,
+            backgroundColor: '#4287f5',
+          }}>
+          <Image
+            style={{
+              width: '100%',
+              height: '100%',
+              // borderRadius: 80,
+              // elevation: 5,
+            }}
+            source={{uri: movie.posterImageURL}}
+          />
         </View>
         <View
           style={{
@@ -93,30 +93,28 @@ function MovieInfo({route}) {
             style={{
               paddingHorizontal: 3,
             }}>
-              
-            <Text style={styles.nameText}>{movie.name}, {movie.year}</Text>
+            <Text style={styles.nameText}>
+              {movie.name}, {movie.year}
+            </Text>
             <Text>감독 : {director.name}</Text>
             <Text>좋아요 {movie.like}</Text>
             <Text>장르 : {movie.tag}</Text>
             <Text>영화 정보 : {movie.summary}</Text>
-            <View style={styles.horizontalSeparator} /> 
+            <View style={styles.horizontalSeparator} />
             <View
-            style={{
-              marginTop: 10,
-              marginBottom: 10,
-              elevation: 10,
-              width: 120,
-              height: 180,
-              justifyContent: 'center',
-              alignItems: 'flex-start',
-            }}>
+              style={{
+                marginTop: 10,
+                marginBottom: 10,
+                elevation: 10,
+                width: 120,
+                height: 180,
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+              }}>
               <Text>{director.name}</Text>
-              <Image
-                style={styles.image}
-                source={{uri:director.imageURL}}/>
-            </View> 
-            <View style={styles.horizontalSeparator} /> 
-          
+              <Image style={styles.image} source={{uri: director.imageURL}} />
+            </View>
+            <View style={styles.horizontalSeparator} />
           </View>
           <HorizontalAtorList propsRefer={movie.actor} />
         </View>

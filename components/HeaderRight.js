@@ -16,22 +16,6 @@ function HeaderRight({propsColor}) {
           style={{...styles.icon, color: propsColor}}
         />
       </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.touchableOpacity}
-        onPress={() => navigation.navigate('Alert')}>
-        <Icon
-          name="notifications"
-          style={{...styles.icon, color: propsColor}}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.touchableOpacity}
-        onPress={() => navigation.navigate('Setting')}>
-        <Icon
-          name="settings" //
-          style={{...styles.icon, color: propsColor}}
-        />
-      </TouchableOpacity>
     </View>
   );
 }

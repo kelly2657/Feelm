@@ -3,53 +3,51 @@ import {StyleSheet, View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function MyHeader() {
-  const navigation = useNavigation();
-  return (
-    <View style={styles.header}>
-      <View style={styles.wrapper}>
-        <Icon
-          name="notifications"
-          size={24}
-          color="#151515"
-          onPress={() => navigation.navigate('Alert')}
-        />
+import AlertAndSetting from '../My/AlertAndSetting';
+
+function MyHeader({visibility, name}) {
+  if (visibility) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.wrapper}>
+          <Text style={styles.title}>{name}</Text>
+          <AlertAndSetting color="#333" />
+        </View>
       </View>
-      <View style={styles.wrapper}>
-        <Icon
-          name="settings"
-          size={24}
-          color="#151515"
-          onPress={() => navigation.navigate('Setting')}
-        />
-      </View>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
     position: 'absolute',
     zIndex: 1,
     width: '100%',
-    height: 48,
-    marginTop: 48,
+    height: 64,
+    backgroundColor: 'white',
     flexDirection: 'row',
-    justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
-  title: {
-    color: 'black',
-    fontSize: 20,
-  },
   wrapper: {
-    width: 32,
-    height: 32,
-    marginLeft: 8,
-    borderRadius: 16,
-    // backgroundColor: '#4287f5',
-    justifyContent: 'center',
+    flexDirection: 'row',
     alignItems: 'center',
+    width: '100%',
+    height: 32,
+    paddingHorizontal: 24,
+  },
+  isTopWrapper: {
+    position: 'absolute',
+    zIndex: 1,
+    top: 32,
+    right: 8,
+    width: 80,
+    height: 32,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  title: {
+    flex: 1,
+    color: 'black',
   },
 });
 

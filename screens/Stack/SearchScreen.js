@@ -1,12 +1,23 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
+import ScreenHeader from '../../components/Header/ScreenHeader';
 
 function SearchScreen() {
   return (
-    <View>
-      <Text>SearchScreen</Text>
-    </View>
+    <>
+      <ScreenHeader title="검색" />
+      <ScrollView style={styles.container}>
+        <Text>ㅎㅇ</Text>
+      </ScrollView>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 64,
+  },
+});
 
 export default SearchScreen;

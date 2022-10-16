@@ -1,9 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, Text, ScrollView, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import HorizontalMovieList from './List/HorizontalMovieList';
+import HorizontalMovieList from '../List/HorizontalMovieList';
 
-function Watched({}) {
+function MenuWatched({}) {
   const reference = [1, 2, 3, 4, 5, 6]; // 테스트 인자 데이터
   return (
     <View style={styles.container}>
@@ -31,7 +31,7 @@ function Watched({}) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    height: 192,
+    height: 208,
     marginVertical: 16,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: -16,
-    marginHorizontal: '40%',
     backgroundColor: 'white',
     width: 40,
     height: 40,
@@ -61,8 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 144,
-    marginTop: -8,
   },
 });
 
-export default Watched;
+export default MenuWatched;

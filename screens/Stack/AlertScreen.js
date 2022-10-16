@@ -1,11 +1,16 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
+
+import ScreenHeader from '../../components/Header/ScreenHeader';
 
 function AlertScreen() {
   return (
-    <View>
-      <Text>AlertScreen</Text>
-    </View>
+    <>
+      <ScreenHeader title="알림" />
+      <ScrollView>
+        <Text />
+      </ScrollView>
+    </>
   );
 }
 

@@ -57,12 +57,12 @@ function MainTab() {
       <Tab.Screen
         name="영화"
         component={MovieTab}
-        options={headerOptions('MOVIE', 'movie', true)}
+        options={{...headerOptions('MOVIE', 'movie'), headerShown: false}}
       />
       <Tab.Screen
         name="시리즈"
         component={SeriesTab}
-        options={headerOptions('SERIES', 'style')}
+        options={{...headerOptions('SERIES', 'style'), headerShown: false}}
       />
       <Tab.Screen
         name="MY"

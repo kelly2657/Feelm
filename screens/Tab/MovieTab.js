@@ -1,14 +1,24 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
 
-import NowInTheatersSeries from '../../components/Series/NowInTheatersSeries';
+import ScreenHeader from '../../components/Header/ScreenHeader';
 
 function MovieTab() {
   return (
-    <View>
-      <NowInTheatersSeries />
-    </View>
+    <>
+      <ScreenHeader title="영화" />
+      <ScrollView style={styles.container}>
+        <Text>ㅎㅇ</Text>
+      </ScrollView>
+    </>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: 64,
+  },
+});
 
 export default MovieTab;

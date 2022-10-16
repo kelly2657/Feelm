@@ -1,25 +1,14 @@
 import React from 'react';
-import {StyleSheet, StatusBar, ScrollView, Text, FlatList} from 'react-native';
+import {StyleSheet, ScrollView, View, Text} from 'react-native';
 
-import Nav from '../../components/Header/Nav';
-import CustomSeries from '../../components/Series/CustomSeries';
-import ActorSeries from '../../components/Series/ActorSeries';
-import DirectorSeries from '../../components/Series/DirectorSeries';
-import OTTSeries from '../../components/Series/OTTSeries';
-import TransparentHeader from '../../components/Header/TransparentHeader';
+import ScreenHeader from '../../components/Header/ScreenHeader';
 
 function SeriesTab() {
-  StatusBar.setBarStyle('dark-content');
   return (
     <>
-      {/* <TransparentHeader /> */}
-      <Nav />
+      <ScreenHeader title="시리즈" />
       <ScrollView style={styles.container}>
-        <CustomSeries propsId={2} />
-        <ActorSeries propsId={3} />
-        <DirectorSeries propsId={4} />
-        <OTTSeries propsOTTName={'NETFILX'} />
-        <OTTSeries propsOTTName={'WATCHA'} />
+        <Text>ㅎㅇ</Text>
       </ScrollView>
     </>
   );
@@ -28,7 +17,7 @@ function SeriesTab() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    marginTop: 64,
   },
 });
 

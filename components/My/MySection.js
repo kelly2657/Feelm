@@ -2,14 +2,14 @@ import React from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function SummarySection({name, color = '#777', size = 20, head, body, width}) {
+function MySection({name, head, body, width, size = 20, color = '#777'}) {
   return (
     <View style={{...styles.container, width}}>
-      <View style={styles.summaryIcon}>
+      {/* <View style={styles.sectionIcon}>
         <Icon name={name} color={color} size={size} />
-      </View>
-      <Text style={styles.summaryHead}>{head}</Text>
-      <Text style={styles.summaryBody}>{body}</Text>
+      </View> */}
+      <Text style={styles.sectionBody}>{body}</Text>
+      <Text style={styles.sectionHead}>{head}</Text>
     </View>
   );
 }
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 80,
   },
-  summaryIcon: {
+  sectionIcon: {
     justifyContent: 'center',
     alignItems: 'center',
     width: 24,
@@ -28,13 +28,14 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: 'white',
   },
-  summaryHead: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  summaryBody: {
+  sectionHead: {
     fontSize: 12,
+  },
+  sectionBody: {
+    color: 'black',
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
 
-export default SummarySection;
+export default MySection;

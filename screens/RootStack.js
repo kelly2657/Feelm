@@ -48,17 +48,17 @@ function RootStack() {
       <Stack.Screen
         name="Alert"
         component={AlertScreen}
-        options={headerOptions}
+        options={{headerShown: false}}
       />
       <Stack.Screen
         name="Search"
         component={SearchScreen}
-        options={headerOptions}
+        options={{headerShown: false}}
       />
       <Stack.Screen
         name="Setting"
         component={SettingScreen}
-        options={headerOptions}
+        options={{headerShown: false}}
       />
 
       <Stack.Screen

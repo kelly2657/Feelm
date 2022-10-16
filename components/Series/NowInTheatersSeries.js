@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {useNavigation} from '@react-navigation/native';
 
@@ -8,18 +8,31 @@ import HorizontalMovieList from '../List/HorizontalMovieList';
 
 /* json */
 const SeriesData = require('../../json/Series.json').items;
+const MovieData = require('../../json/Movie.json').items;
 
-/** 상영작 */
+/**
+ * 특정 사용자가 제공하는 커스텀 시리즈
+ * @param {number} propsId 시리즈 ID
+ */
 function NowInTheatersSeries() {
   const navigation = useNavigation();
+  const series = SeriesData.filter(item => item.id === 0)[0];
+  const represent = series.refer[3];
+  const img = MovieData.filter(item => item.id === represent)[0].imageURL;
+  console.log(img);
   return (
-    <View style={styles.container}>
-      <View style={styles.section}>
-        <TouchableOpacity style={styles.left}>
-          <Text>상영작</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <TouchableOpacity style={styles.container}>
+      <Image
+        style={{
+          width: '100%',
+          height: '100%',
+          opacity: 0.5,
+        }}
+        source={{
+          uri: 'https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2022%2F04%2Fthe-roundup-teaser-video-don-lee-ft.jpg?w=960&cbr=1&q=90&fit=max',
+        }}
+      />
+    </TouchableOpacity>
   );
 }
 

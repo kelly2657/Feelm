@@ -44,13 +44,11 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     height: 180,
-    marginHorizontal: 8,
-    marginVertical: 8,
+    marginTop: 16,
+    marginHorizontal: 16,
     borderWidth: 1,
     borderColor: '#ccc',
-    borderRadius: 0,
     backgroundColor: '#fafafa',
-    elevation: 5,
   },
   left: {
     width: 160,

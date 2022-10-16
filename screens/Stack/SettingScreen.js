@@ -1,6 +1,7 @@
 import React, {useCallback} from 'react';
-import {StyleSheet, View, FlatList} from 'react-native';
+import {StyleSheet, ScrollView, View, FlatList} from 'react-native';
 
+import ScreenHeader from '../../components/Header/ScreenHeader';
 import SettingOption from '../../components/SettingOption';
 
 const optionData = [
@@ -32,34 +33,43 @@ const ITEM_HEIGHT = 64;
 
 function SettingScreen({navigation}) {
   return (
-    <View style={styles.screen}>
-      <FlatList
-        style={styles.flatList}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-        data={optionData}
-        getItemLayout={useCallback(
-          (_, index) => ({
-            length: ITEM_HEIGHT,
-            offset: ITEM_HEIGHT * index,
-            index,
-          }),
-          [],
-        )}
-        renderItem={({item}) => (
-          <SettingOption
-            toggleText={item.toggleText}
-            toggleDescription={item.toggleDescription}
-            toggleFunc={item.toggleFunc}
-            // onValueChange={item.onValueChange}
-          />
-        )}
-      />
-      <View style={styles.separator} />
-    </View>
+    <>
+      <ScreenHeader title="설정" />
+      <View style={styles.container}>
+        <FlatList
+          style={styles.flatList}
+          ItemSeparatorComponent={() => <View style={styles.separator} />}
+          data={optionData}
+          getItemLayout={useCallback(
+            (_, index) => ({
+              length: ITEM_HEIGHT,
+              offset: ITEM_HEIGHT * index,
+              index,
+            }),
+            [],
+          )}
+          renderItem={({item}) => (
+            <SettingOption
+              toggleText={item.toggleText}
+              toggleDescription={item.toggleDescription}
+              toggleFunc={item.toggleFunc}
+              // onValueChange={item.onValueChange}
+            />
+          )}
+        />
+        <View style={styles.separator} />
+      </View>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    marginTop: 64,
+    alignItems: 'center',
+    flex: 1,
+    backgroundColor: 'white',
+  },
   title: {
     width: '100%',
     height: 400,
@@ -74,11 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flexGrow: 0,
   },
-  screen: {
-    alignItems: 'center',
-    flex: 1,
-    backgroundColor: 'white',
-  },
+
   separator: {
     height: 1,
     backgroundColor: '#ccc',

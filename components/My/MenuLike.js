@@ -1,10 +1,10 @@
 import React from 'react';
-import {StyleSheet, View, Text, ScrollView, Image} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import MySection from './MySection';
 
-function MenuLike() {
+function MenuLike({movie, series, actor, director}) {
   return (
     <View style={styles.container}>
       <View style={styles.iconWrapper}>
@@ -12,10 +12,10 @@ function MenuLike() {
       </View>
 
       <View style={styles.section}>
-        <MySection name="movie" head="영화" body={36} width="25%" />
-        <MySection name="style" head="시리즈" body={24} width="25%" />
-        <MySection name="mood" head="배우" body={12} width="25%" />
-        <MySection name="videocam" head="감독" body={5} width="25%" />
+        <MySection head="영화" body={movie} width="25%" />
+        <MySection head="시리즈" body={series} width="25%" />
+        <MySection head="배우" body={actor} width="25%" />
+        <MySection head="감독" body={director} width="25%" />
       </View>
     </View>
   );

@@ -1,9 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import MenuLike from './MenuLike';
 import GoAlertAndSetting from '../Header/GoAlertAndSetting';
+
+const MyData = require('../../json/My.json');
 
 function Profile({visibility, name}) {
   return (
@@ -12,13 +13,18 @@ function Profile({visibility, name}) {
         style={{...styles.profileImageWrapper, opacity: visibility ? 1 : 0}}>
         <Image
           style={styles.profileImage}
-          source={{uri: 'https://b31l.github.io/assets/img/profile.png'}}
+          source={{uri: MyData.profileImageURL}}
         />
       </View>
       <View style={styles.profileNameWrapper}>
         <Text style={styles.profileName}>{name}</Text>
       </View>
-      <MenuLike />
+      <MenuLike
+        movie={MyData.like.movie.length}
+        series={MyData.like.series.length}
+        actor={MyData.like.actor.length}
+        director={MyData.like.director.length}
+      />
       <View style={styles.editWrapper}>
         <Icon name="edit" color="black" size={16} />
         <Text style={styles.editText}>편집</Text>

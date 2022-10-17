@@ -1,16 +1,6 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ImageBackground,
-} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {StyleSheet, View, Text, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-/* components */
-import HorizontalMovieList from '../List/HorizontalMovieList';
 
 /* json */
 const images = {
@@ -24,21 +14,22 @@ function OTTSeries({propsOTTName}) {
   return (
     <TouchableOpacity style={styles.container}>
       <View style={styles.section}>
-        <Text style={styles.text}>오직</Text>
+        <Text style={styles.text}>오직 </Text>
         {propsOTTName === 'NETFILX' ? (
-          <Image
-            style={styles.image}
-            source={require('../../assets/img/NETFLIX.png')}
-            resizeMode="stretch"
-          />
+          <Text style={{...styles.text, color: 'red'}}>NETFILX</Text>
         ) : (
+          // <Image
+          //   style={styles.image}
+          //   source={require('../../assets/img/NETFLIX.png')}
+          //   resizeMode="stretch"
+          // />
           <Image
             style={styles.image}
             source={require('../../assets/img/WATCHA.png')}
             resizeMode="stretch"
           />
         )}
-        <Text style={styles.text}>에서만</Text>
+        <Text style={styles.text}> 에서만</Text>
       </View>
     </TouchableOpacity>
   );

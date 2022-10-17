@@ -1,159 +1,78 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {StyleSheet, View, Text, Image} from 'react-native';
+import ScreenHeader from '../../components/Header/ScreenHeader';
+import GoBack from '../../components/Header/GoBack';
+import BeLike from '../../components/Header/BeLike';
+import VerticalMovieList from '../../components/List/VerticalMovieList';
+import MySection from '../../components/My/MySection';
 
-import TransparentHeader from '../../components/Header/TransparentHeader';
-import HorizontalMovieList from '../../components/List/HorizontalMovieList';
-
-const MovieData = require('../../json/Movie.json').items;
+const MyData = require('../../json/My.json');
 const ActorData = require('../../json/Actor.json').items;
+const MovieData = require('../../json/Movie.json').items;
 
-/**
- * 시리즈 정보
- * @할것 가독성 향상을 위해 StatusBar을 상황에 따라 light-content 또는 dark-content로 설정하는 기능을 추가해야 합니다.
- */
+/** 시리즈 정보 */
 function ActorInfo({route}) {
   const actor = ActorData.filter(item => item.id === route.params.propsId)[0];
   return (
     <>
-      <TransparentHeader backgroundColor="orange" />
-      <ScrollView style={styles.container}>
-        <View
-          style={{
-            height: 240,
-            backgroundColor: 'orange',
-          }}
-        />
-        <View
-          style={{
-            alignItems: 'center',
-          }}>
+      <ScreenHeader title={actor.name} />
+      <GoBack />
+      <BeLike color={MyData.like.series.includes(actor.id) ? 'red' : '#333'} />
+      <View style={styles.container}>
+        <View style={{flexDirection: 'row'}}>
           <View
             style={{
-              borderRadius: 80,
-              elevation: 5,
-              width: 128,
-              height: 128,
-              marginTop: -96,
-              backgroundColor: 'white',
               justifyContent: 'center',
               alignItems: 'center',
+              marginLeft: 16,
             }}>
-            <Image
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: 80,
-                // elevation: 5,
-              }}
-              source={{uri: actor.imageURL}}
-            />
+            <View style={styles.imageWrapper}>
+              <Image style={styles.image} source={{uri: actor.imageURL}} />
+            </View>
+            {/* <MySection width="40%" /> */}
+          </View>
+          <View style={{...styles.block, flex: 1}}>
+            <MySection head="작품 수" body={actor.refer.length} width="50%" />
+            <MySection head="좋아요 수" body={actor.like} width="50%" />
           </View>
         </View>
-
-        <View
-          style={{
-            marginTop: -12,
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <View
-            style={{
-              width: 32,
-              height: 32,
-              alignItems: 'center',
-              justifyContent: 'center',
-              elevation: 5,
-              backgroundColor: 'white',
-              borderRadius: 16,
-              zIndex: 1,
-            }}>
-            <Icon name="favorite" color="red" size={16} />
-          </View>
+        <View style={{...styles.block, flex: 1}}>
+          <VerticalMovieList propsRefer={actor.refer} />
         </View>
-
-        <View
-          style={{
-            marginTop: 16,
-            paddingHorizontal: 8,
-            backgroundColor: 'white',
-          }}>
-          <View
-            style={{
-              paddingHorizontal: 8,
-            }}>
-            <Text>{actor.refer.length}개 작품</Text>
-            <Text>배우 어쩌구 저쩌구</Text>
-            <View style={styles.horizontalSeparator} />
-          </View>
-
-          <HorizontalMovieList propsRefer={actor.refer} />
-        </View>
-      </ScrollView>
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-  repImageBefore: {
-    backgroundColor: '#151515',
-  },
-  repImage: {
-    width: '100%',
-    height: 320,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    paddingBottom: 16,
-    opacity: 0.5,
-  },
-  block: {
-    width: '70%',
-    height: 64,
-    marginHorizontal: '15%',
-    // marginTop: -32,
-    marginBottom: 16,
-    elevation: 5,
-    // borderRadius: 16,
-    backgroundColor: 'white',
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    // opacity: 0.5,
+    flex: 1,
+    marginTop: 64,
+    marginBottom: 16,
+    backgroundColor: '#eee',
   },
-  name: {
-    width: '75%',
+  block: {
     alignItems: 'center',
+    marginTop: 16,
+    marginHorizontal: 16,
+    padding: 16,
+    borderRadius: 8,
+    backgroundColor: 'white',
   },
-  nameText: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  likeText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  verticalSeparator: {
-    width: 1,
-    height: 40,
-    marginHorizontal: 8,
-    backgroundColor: '#ccc',
-  },
-  horizontalSeparator: {
-    width: '100%',
-    height: 1,
-    marginVertical: 8,
-    backgroundColor: '#ccc',
+  imageWrapper: {
+    width: 144,
+    height: 192,
+    marginTop: 16,
+    borderRadius: 8,
   },
   image: {
     width: '100%',
     height: '100%',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ccc',
   },
 });
 

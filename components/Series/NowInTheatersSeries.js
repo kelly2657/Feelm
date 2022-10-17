@@ -19,7 +19,6 @@ function NowInTheatersSeries() {
   const series = SeriesData.filter(item => item.id === 0)[0];
   const represent = series.refer[3];
   const img = MovieData.filter(item => item.id === represent)[0].imageURL;
-  console.log(img);
   return (
     <TouchableOpacity style={styles.container}>
       <Image

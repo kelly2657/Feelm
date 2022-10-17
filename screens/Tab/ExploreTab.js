@@ -26,8 +26,8 @@ function ExploreTab() {
       <ScrollView style={styles.container} onScroll={onScroll}>
         <NowInTheatersSeries />
         <CustomSeries propsId={1} />
-        <CustomSeries propsId={8} />
-        <CustomSeries propsId={14} />
+        <CustomSeries propsId={2} />
+        <CustomSeries propsId={3} />
         <OTTSeries propsOTTName={'NETFILX'} />
         <OTTSeries propsOTTName={'WATCHA'} />
       </ScrollView>

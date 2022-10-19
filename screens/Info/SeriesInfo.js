@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import ScreenHeader from '../../components/Header/ScreenHeader';
-import GoBack from '../../components/Header/GoBack';
-import BeLike from '../../components/Header/BeLike';
+import GoBack from '../../components/Button/GoBack';
+import BeLike from '../../components/Button/BeLike';
 import VerticalMovieList from '../../components/List/VerticalMovieList';
-import MySection from '../../components/My/MySection';
+import ChickenEgg from '../../components/Section/ChickenEgg';
 
 const MyData = require('../../json/My.json');
 const SeriesData = require('../../json/Series.json').items;
@@ -20,9 +20,9 @@ function SeriesInfo({route}) {
       <BeLike color={MyData.like.series.includes(series.id) ? 'red' : '#333'} />
       <View style={styles.container}>
         <View style={{...styles.block, flexDirection: 'row'}}>
-          <MySection head="크리에이터" body={series.creator} width="40%" />
-          <MySection head="작품 수" body={series.refer.length} width="30%" />
-          <MySection head="좋아요 수" body={series.like} width="30%" />
+          <ChickenEgg head="크리에이터" body={series.creator} width="40%" />
+          <ChickenEgg head="작품 수" body={series.refer.length} width="30%" />
+          <ChickenEgg head="좋아요 수" body={series.like} width="30%" />
         </View>
         <View style={{...styles.block, flex: 1}}>
           <VerticalMovieList propsRefer={series.refer} />

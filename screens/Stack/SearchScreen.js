@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, ScrollView, View, Text} from 'react-native';
 import ScreenHeader from '../../components/Header/ScreenHeader';
-import GoBack from '../../components/Header/GoBack';
+import GoBack from '../../components/Button/GoBack';
 
 function SearchScreen() {
   return (

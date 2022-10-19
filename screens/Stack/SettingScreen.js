@@ -1,9 +1,8 @@
 import React, {useCallback} from 'react';
-import {StyleSheet, ScrollView, View, FlatList} from 'react-native';
-
+import {StyleSheet, View, FlatList} from 'react-native';
 import ScreenHeader from '../../components/Header/ScreenHeader';
-import GoBack from '../../components/Header/GoBack';
-import SettingOption from '../../components/SettingOption';
+import GoBack from '../../components/Button/GoBack';
+import SettingOption from '../../components/Section/SettingOption';
 
 const optionData = [
   {

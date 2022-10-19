@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import TransparentHeader from '../../components/Header/TransparentHeader';
 import HorizontalAtorList from '../../components/List/HorizontalActorList';
 

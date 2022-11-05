@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, ScrollView, View, Text, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import TransparentHeader from '../../components/Header/TransparentHeader';
+import Directorpic from '../../components/List/Directorpic';
 import HorizontalAtorList from '../../components/List/HorizontalActorList';
 
 const MovieData = require('../../json/Movie.json').items;
@@ -99,19 +100,7 @@ function MovieInfo({route}) {
             <Text>장르 : {movie.tag}</Text>
             <Text>영화 정보 : {movie.summary}</Text>
             <View style={styles.horizontalSeparator} />
-            <View
-              style={{
-                marginTop: 10,
-                marginBottom: 10,
-                elevation: 10,
-                width: 120,
-                height: 180,
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-              }}>
-              <Text>{director.name}</Text>
-              <Image style={styles.image} source={{uri: director.imageURL}} />
-            </View>
+            <Directorpic propsRefer={movie.director}/>
             <View style={styles.horizontalSeparator} />
           </View>
           <HorizontalAtorList propsRefer={movie.actor} />
